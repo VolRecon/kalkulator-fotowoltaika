@@ -1,5 +1,5 @@
 
-## [Demo](https://volrecon.github.io)
+## [Demo](https://volrecon.github.io/kalkulator-fotowoltaika/)
 
 Rzeczy które jeszcze trzeba w nim zrobić dodatkowo:
 - przystosowanie aplikacji dla osoób niewidzących,
