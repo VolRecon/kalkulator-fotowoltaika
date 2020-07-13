@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fotowoltaika</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__title">Kalkulator - Fotowoltaika</h1>
+  </header>
+  <main class="stepper">
+    <section class="stepper__section">
+      <div class="stepper__container-steps">
+        <div class="steps">
+          <ul class="steps__list" data-steper-list="0">
+            <li class="steps__list-item" data-step-go="0">
+              <button class="steps__item-btn item-btn--active">
+                <span class="steps__item-btn-span">1</span>
+              </button>
+              <span class="steps__item-span item-span--active">Miesięczny koszt</span>
+            </li>
+            <li class="steps__list-item" data-step-go="1">
+              <button class="steps__item-btn">
+                <span class="steps__item-btn-span">2</span>
+              </button>
+              <span class="steps__item-span">Rodzaj dachu</span>
+            </li>
+            <li class="steps__list-item" data-step-go="2">
+              <button class="steps__item-btn">
+                <span class="steps__item-btn-span">3</span>
+              </button>
+              <span class="steps__item-span">Kalkulacja</span>
+            </li>
+            <li class="steps__list-item" data-step-go="3">
+              <button class="steps__item-btn">
+                <span class="steps__item-btn-span">4</span>
+              </button>
+              <span class="steps__item-span">Podsumowanie</span>
+            </li>
+          </ul>
+          <div class="steps__slicks">
+            <button class="steps__button button--prev button--prev-opacity" data-prev-button>
+              Wstecz
+            </button>
+            <button class="steps__button button--next" data-next-button>
+              Dalej
+            </button>
+          </div>
+          <div class="steps__slide-information" data-slick>
+            <div class="steps__content" data-content>
+              <div class="steps__one" data-slick-index="0" aria-hidden="false">
+                <p class="steps__title">
+                  Podaj swój miesięczny koszt zużycia prądu:
+                </p>
+
+                <div class="steps__calculator">
+                  <span class="steps__bar">
+                    <span id="data-fill" class="steps__fill"></span>
+                  </span>
+                  <input type="range" min="10" max="1000" step="10" value="10" tabindex="0"
+                    id="steps__calculator-range" />
+                  <div class="steps__label">
+                    <span id="steps__calculator-text">10</span>
+                    <span>zł</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="steps__two" data-slick-index="1" aria-hidden="true" tabindex="-1">
+                <!-- <div> -->
+                <div class="steps__two-container">
+                  <p class="steps__title">
+                    Wybierz rodzaj dachu
+                  </p>
+
+                  <div class="steps__roof-list">
+                    <div class="steps__roof-item">
+                      <input type="radio" name="roof_type" id="roof_type1" value="flat" data-roof="Dach płaski"
+                        checked="" tabindex="-1" />
+                      <label for="roof_type1">
+                        <div class="steps__roof-image">
+                          <img
+                            src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_roof_1.png"
+                            alt="" class="steps__image-normal steps__image" />
+                          <img
+                            src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_roof_1_act.png"
+                            alt="" class="steps__image-active steps__image" />
+                        </div>
+                        <span>Dach płaski</span>
+                      </label>
+                    </div>
+                    <div class="steps__roof-item">
+                      <input type="radio" name="roof_type" id="roof_type2" value="ns"
+                        data-roof="Dach skośny północ-południe" tabindex="-1" />
+                      <label for="roof_type2">
+                        <div class="steps__roof-image">
+                          <img
+                            src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_roof_2.png"
+                            alt="" class="steps__image-normal steps__image" />
+                          <img
+                            src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_roof_2_act.png"
+                            alt="" class="steps__image-active steps__image" />
+                        </div>
+                        <span>Dach skośny<br />
+                          północ-południe</span>
+                      </label>
+                    </div>
+                    <div class="steps__roof-item">
+                      <input type="radio" name="roof_type" id="roof_type3" value="ew"
+                        data-roof="Dach skośny wschód-zachód" tabindex="-1" />
+                      <label for="roof_type3">
+                        <div class="steps__roof-image">
+                          <img
+                            src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_roof_3.png"
+                            alt="" class="steps__image-normal steps__image" />
+                          <img
+                            src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_roof_3_act.png"
+                            alt="" class="steps__image-active steps__image" />
+                        </div>
+                        <span>Dach skośny<br />
+                          wschód-zachód</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- </div> -->
+              </div>
+              <div class="steps__three" data-slick-index="2" aria-hidden="true" tabindex="-1">
+                <div class="steps__three-container" data-calculation-container>
+                  <p class="steps__three-paragraph">
+                    Prognozowana moc Twojej instalacji fotowoltaicznej:
+                    <span class="steps__three-span">10</span> KW
+                  </p>
+                  <p class="steps__three-paragraph">
+                    Liczba potrzebnych paneli:
+                    <span class="steps__three-span">46</span>
+                  </p>
+                  <p class="steps__three-paragraph">
+                    Powierzchnia dachu:
+                    <span class="steps__three-span">77</span> m<sup>2</sup>
+                  </p>
+                  <p class="steps__three-paragraph">
+                    Dzięki własnej elektrowni słonecznej zaoszczędzisz
+                    <span class="steps__three-span">8280</span> zł / rocznie
+                  </p>
+                </div>
+              </div>
+              <div class="steps__four" data-slick-index="3" aria-hidden="true" tabindex="-1">
+                <div class="steps__four-container">
+                  <p class="steps__title">
+                    Szacowany koszt Twojej instalacji fotowoltaicznej
+                    wyniesie:
+                  </p>
+                  <p class="steps__four-paragraph" data-cost>
+                    <span class="steps__four-span">-</span>
+                  </p>
+
+                  <p class="steps__four-paragraph">
+                    W tej cenie otrzymasz:
+                  </p>
+
+                  <div class="steps__four-investment-stages">
+                    <div class="steps__four-section-step">
+                      <div class="steps__four-section-image">
+                        <img class="steps__four-img"
+                          src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_research.png"
+                          alt="Ikona" />
+                      </div>
+                      <p class="steps__four-step-title">Audyt</p>
+                      <p class="steps__four-step-paragraph">
+                        Ustalamy wszelkie szczegóły. Sprawdzamy wszystkie
+                        aspekty techniczne.
+                      </p>
+                    </div>
+                    <div class="steps__four-section-step">
+                      <div class="steps__four-section-image">
+                        <img class="steps__four-img"
+                          src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_project.png"
+                          alt="Ikona" />
+                      </div>
+                      <p class="steps__four-step-title">Projekt</p>
+                      <p class="steps__four-step-paragraph">
+                        Opracowujemy projekt elektrowni słonecznej dobieramy
+                        moc Twojej instalacji.
+                      </p>
+                    </div>
+                    <div class="steps__four-section-step">
+                      <div class="steps__four-section-image">
+                        <img class="steps__four-img"
+                          src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_holders.png"
+                          alt="Ikona" />
+                      </div>
+                      <p class="steps__four-step-title">
+                        Zestaw fotowoltaiczny
+                      </p>
+                      <p class="steps__four-step-paragraph">
+                        System fotowoltaiczny z paneli słonecznych, inwertera
+                        oraz konstrukcji mocującej.
+                      </p>
+                    </div>
+                    <div class="steps__four-section-step">
+                      <div class="steps__four-section-image">
+                        <img class="steps__four-img"
+                          src="https://powergreen.com.pl/wp-content/themes/pwrgreen-5/assets/img/icons/ico_montage.png"
+                          alt="Ikona" />
+                      </div>
+                      <p class="steps__four-step-title">Montaż</p>
+                      <p class="steps__four-step-paragraph">
+                        Instalacja systemu fotowoltaicznego wraz z zapleczem
+                        technicznym.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stepper__container-info">
+        <div class="info">
+          <ul class="info__list">
+            <li class="info__item">
+              <span class="info__span">Miesięczny koszt energii:</span>
+              <span class="info__value">- zł</span>
+            </li>
+            <li class="info__item">
+              <span class="info__span">kWh miesięcznie:</span>
+              <span class="info__value">- zł</span>
+            </li>
+            <li class="info__item">
+              <span class="info__span">Typ dachu:</span>
+              <span class="info__value">-</span>
+            </li>
+            <li class="info__item">
+              <span class="info__span">Ilość paneli:</span>
+              <span class="info__value">-</span>
+            </li>
+            <li class="info__item">
+              <span class="info__span">Powierzchnia dachu:</span>
+              <span class="info__value">-</span>
+            </li>
+            <li class="info__item">
+              <span class="info__span">Koszt wykonania:</span>
+              <span class="info__value">-</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./js/index.js"></script>
+  <script>
+    const app = new App();
+    app.initializeApp();
+  </script>
+</body>
+
+</html>
